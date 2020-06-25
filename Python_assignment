@@ -1,0 +1,39 @@
+def test_sum():
+    assert sum([1, 2, 3]) == 6, "Should be 6"
+if __name__ == "__main__":
+    test_sum()
+    print("Everything passed")
+def test_sum():
+    assert sum([1, 2, 3]) == 6, "Should be 6"
+if __name__ == "__main__":
+    test_sum()
+    test_sum_tuple()
+    print("Everything passed")
+def test_sum_tuple():
+    assert sum((1, 2, 2)) == 6, "Should be 6"
+def sum(arg):
+    total = 0
+    for val in arg:
+        total += val
+    return total
+# importing pandas as pd 
+import pandas as pd 
+  
+# Create the Period object 
+prd = pd.Period(freq ='S', year = 2000, month = 2, day = 22, 
+                         hour = 8, minute = 21, second = 24) 
+  
+# Print the Period object 
+print(prd) 
+import jira.client
+ from jira.client import JIRA
+
+jira = JIRA(options, basic_auth=(USERNAME, PASSWORD))
+
+issue = jira.issue('FOO-100', expand='changelog')
+changelog = issue.changelog
+
+for history in changelog.histories:
+    for item in history.items:
+        if item.field == 'status':
+            print 'Date:' + history.created + ' From:' + item.fromString + ' To:' + item.toString
